@@ -1,7 +1,18 @@
 from pyexpat import model
 from django.contrib import admin
 
-from viajes.models import viajes
+from viajes.models import Paquete,Vuelo,Hotel
 
 
-admin.site.register(viajes)
+@admin.register(Paquete)
+class Products_admin(admin.ModelAdmin):
+    list_display = ['name', 'location', 'description', 'price']
+
+@admin.register(Vuelo)
+class Products_admin(admin.ModelAdmin):
+    list_display = ["name", "departure", "destination", "date_departue" , "date_return" , "price" ]
+
+
+admin.site.register(Hotel)
+
+

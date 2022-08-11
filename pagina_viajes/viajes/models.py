@@ -18,6 +18,9 @@ class Paquete(models.Model):
     description = models.TextField()
     price= models.FloatField()
 
+    
+
+
 class Vuelo(models.Model):
     name = models.CharField(max_length=200)
     departure = models.TextField()
@@ -31,10 +34,10 @@ class Hotel(models.Model):
     location= models.TextField()
     date_departue = models.DateField(auto_now_add=True, null=True, blank=True)
     date_return = models.DateField(auto_now_add=True, null=True, blank=True)
-    price= models.FloatField()        
-
-
-
+    price= models.FloatField() 
+    
+    def __str__(self):
+        return f"nombre: {self.name} --- locacion: {self.location} --- precio: {self.price}"
 
 
 
