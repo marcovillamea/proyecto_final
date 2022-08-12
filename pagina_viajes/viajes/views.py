@@ -81,14 +81,14 @@ def formulario_vuelo(request):
     if request.method == "POST":
         form = formulario_create_vuelo(request.POST)
 
-    if form.is_valid():
-        Vuelo.objects.create(
-            name = form.cleaned_data["name"],
-            departure = form.cleaned_data["departure"],
-            destination = form.cleaned_data["destination"],
-            date_departue = form.cleaned_data["date_departue"],
-            date_return = form.cleaned_data["date_return"],
-            price= form.cleaned_data["price"]
+        if form.is_valid():
+            Vuelo.objects.create(
+                name = form.cleaned_data["name"],
+                departure = form.cleaned_data["departure"],
+                destination = form.cleaned_data["destination"],
+                date_departue = form.cleaned_data["date_departue"],
+                date_return = form.cleaned_data["date_return"],
+                price= form.cleaned_data["price"]
             )
         return redirect(verVuelo)
     elif request.method == "GET":
