@@ -123,3 +123,19 @@ def list_all(request):
     }
 
     return render(request,"lista_all.html",context=context)
+
+
+def delete(request, id):
+    if request.method == "post":
+        vuelos = Vuelo.objects.get(id=id)
+        vuelos.delete()
+
+        return redirect(verPaquetes)
+
+    elif request.method == "get":
+        vuelos = Vuelo.objects.get(id=id)
+        context = {
+            "vuelos":vuelos}
+        
+        
+        return render(request, "delete_Vuelo.html",context=context)
