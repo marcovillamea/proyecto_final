@@ -1,13 +1,12 @@
-{%  extends "template/base.html" %}
+{% extends "base.html" %}
 
-{% block titulo %}
-lista 
+{% block titulo%}
+lista
 {% endblock %}
 
+{%block contenidoquecambia %}
 
-{% block contenidoquecambia %}
-
-{% for lista in list_paquetes %}
+{% for lista in lista_all %}
 
 <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -22,4 +21,11 @@ lista
 {% endfor %}
 
 
-{% endblock %}
+
+
+
+
+
+
+
+{% endblock%}

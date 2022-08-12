@@ -6,12 +6,12 @@ search
 
 
 {% block contenidoquecambia %}
-{% for lista in list %}
+{% for lista in buscador %}
 <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">{{lista.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{lista.location}}</h6>
-      <p class="card-text">{{lista.descripcion}}</p>
+      <h6 class="card-subtitle mb-2 text-muted">${{lista.price}}</h6>
+      <p class="card-text"></p>
       <a href="#" class="card-link">Card link</a>
       <a href="#" class="card-link">Another link</a>
     </div>

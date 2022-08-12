@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.shortcuts import render,redirect
 from multiprocessing import context
 from datetime import date
@@ -34,42 +35,17 @@ def viajeformulario(request):
         return render(request,"viajeformulario.html",context=context)
 
 
-def lista_viajes(request):
-    list = viajes.objects.all()
-    context = {
-        "list": list
-    }
-
-    return render(request,"lista_de_lugares.html",context=context)
-
-def lista_viajes(request):
-    list = Paquete.objects.all()
-    context = {
-        "list": list
-    }
-
-    return render(request,"lista_de_lugares.html",context=context) 
-
-
-
-def lista_viajess(request):
-    list_hotel = Hotel.objects.all()
-    context = {
-        "list": list_hotel
-    }
-
-    return render(request,"lista_de_lugares.html",context=context)    
-         
-
 
 def search_products(request):
     search = request.GET["search"]
-    list = Paquete.objects.filter(name__icontains=search)
+    buscador = Hotel.objects.filter(name__icontains=search)
     context = {
-        "list":list
+        "buscador":buscador
     }
 
     return render(request, "search_products.html",context=context)
+
+
 
 def verPaquetes(request):
     paquetes = Paquete.objects.all()
@@ -137,3 +113,13 @@ def formulario_hotel(request):
         form = formulario_create_hotel()
         context = {"form": form}
         return render(request,"formulario_nuevohotel.html", context = context)
+
+
+def list_all(request):
+    lista_hoteles = Hotel.objects.all()
+    list_all = lista_hoteles
+    context = {
+        "lista_all": list_all
+    }
+
+    return render(request,"lista_all.html",context=context)
