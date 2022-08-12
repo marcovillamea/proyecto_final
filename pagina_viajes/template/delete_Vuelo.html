@@ -1,19 +1,20 @@
-{% extends "base.html"  %}
+{% extends "base.html" %}
 
-{% block titulo%}
-borar datos
+{% block titulo %}
+borrar
 {% endblock %}
 
+{% block contenidoquecambia %}
 
-{% block contenido_que_cambia %}
-
-<p>Nombre del producto: {{Vuelos.name}}</p>
-
+<p>vuelo: {{vuelos.name}}</p>
+<p>destino del vuelo: {{vuelos.destination}}</p>
+<p>Precio del vuelo: {{vuelos.price}}</p>
 
 <form action="" method="POST">
     {% csrf_token %}
-    <input type="submit" value="Borrar vuelos">
-
+    <input type="submit" value="Borrar">
 </form>
+{% endblock %}
+
 
 

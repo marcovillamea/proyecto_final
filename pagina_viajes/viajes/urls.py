@@ -15,5 +15,5 @@ urlpatterns = [
     path("create-vuelo/", formulario_vuelo),
     path("create-hotel/", formulario_hotel),
     path("lista-all/", list_all, name="list all"),
-    path("delete/<int:id>/", delete, name="delete")
+    path("delete/<int:pk>/", delete, name="delete")
 ]
